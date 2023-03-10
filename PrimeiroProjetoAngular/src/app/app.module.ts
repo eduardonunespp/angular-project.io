@@ -10,6 +10,7 @@ registerLocaleData(localePt)
 
 import { NgBrazil } from 'ng-brazil'
 import { TextMaskModule } from 'angular2-text-mask';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
@@ -42,6 +43,7 @@ import { CadastroComponent } from './demos/reactForms/cadastro/cadastro.componen
     HttpClientModule,
     NgBrazil,
     TextMaskModule,
+    CustomFormsModule,
     [RouterModule.forRoot(rootRouterConfig, { useHash: false })]
   ],
   providers: [
