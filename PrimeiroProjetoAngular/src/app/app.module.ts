@@ -30,7 +30,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     ContatoComponent,
     DataBindingComponent,
     ListaProdutoComponent,
-    CadastroComponent
+    CadastroComponent,
   ],
   imports: [
     NavegacaoModule,

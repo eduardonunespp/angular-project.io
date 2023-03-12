@@ -13,10 +13,14 @@ export const rootRouterConfig: Routes = [
     { path: 'contato', component: ContatoComponent },
     { path: 'sobre', component: SobreComponent },
     { path: 'feature-data-binding', component: DataBindingComponent },
-    { path: 'produtos', component: ListaProdutoComponent},
+    //{ path: 'produtos', component: ListaProdutoComponent},
     { path: 'produto-detalhe/:id', component: ListaProdutoComponent},
     { path: 'carrinho/:id', component: ListaProdutoComponent},
-    { path: 'cadastro', component: CadastroComponent}
+    { path: 'cadastro', component: CadastroComponent},
+    {path: 'produtos', 
+        loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
+        .then(m => m.ProdutoModule)
+    }
 ];
 
 @NgModule({
