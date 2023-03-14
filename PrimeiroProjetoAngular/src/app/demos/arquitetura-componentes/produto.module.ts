@@ -5,13 +5,15 @@ import { RouterModule } from "@angular/router";
 import { ProdutoRouterConfig } from "./produto.router";
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt"
+import { ProdutoCardDetalheComponent } from "./components/produto-card-detalhe.component";
 registerLocaleData(localePt)
 
 
 
 @NgModule({
     declarations: [
-        ProdutoDashboardComponent
+        ProdutoDashboardComponent,
+        ProdutoCardDetalheComponent
     ],
     imports: [
         CommonModule,
