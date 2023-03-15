@@ -6,8 +6,10 @@ import { DataBindingComponent } from "./demos/data-binding/data-binding.componen
 import { ListaProdutoComponent } from "./produtos/lista-produto/lista-produto.component";
 import { Component, NgModule } from "@angular/core";
 import { CadastroComponent } from "./demos/reactForms/cadastro/cadastro.component";
+import { NotFoundComponent } from "./navegacao/not-found/not-found.component";
 
 export const rootRouterConfig: Routes = [
+    
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'contato', component: ContatoComponent },
@@ -20,7 +22,8 @@ export const rootRouterConfig: Routes = [
     {path: 'produtos', 
         loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
         .then(m => m.ProdutoModule)
-    }
+    },
+    { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
