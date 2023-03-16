@@ -46,7 +46,6 @@ import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produ
   ],
   providers: [
     ProdutosService,
-    { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
 })
