@@ -9,6 +9,7 @@ import { ProdutoCardDetalheComponent } from "./components/produto-card-detalhe.c
 import { ProdutoCountComponent } from "./components/produto-count.component";
 import { EditarProdutoComponent } from "./editar-produto/editar-produto.component";
 import { ProdutoAppComponent } from "./produto.app.component";
+import { HttpClientModule } from "@angular/common/http";
 registerLocaleData(localePt);
 
 @NgModule({
@@ -17,9 +18,9 @@ registerLocaleData(localePt);
     ProdutoCardDetalheComponent,
     ProdutoCountComponent,
     EditarProdutoComponent,
-    ProdutoAppComponent
+    ProdutoAppComponent,
   ],
-  imports: [CommonModule, ProdutoRouterConfig],
+  imports: [CommonModule, ProdutoRouterConfig, HttpClientModule],
   exports: [],
 })
 export class ProdutoModule {}

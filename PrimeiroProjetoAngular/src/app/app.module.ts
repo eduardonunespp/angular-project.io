@@ -42,7 +42,7 @@ import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produ
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,
-    AppRouterConfig
+    AppRouterConfig,
   ],
   providers: [
     ProdutosService,

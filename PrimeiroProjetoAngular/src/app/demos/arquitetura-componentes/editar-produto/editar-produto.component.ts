@@ -7,11 +7,12 @@ import { Produto } from '../models/produto';
   selector: 'app-editar-produto',
   templateUrl: './editar-produto.component.html',
   styles: [
-  ]
+  ],
+  providers: [ ProdutosService ]
 })
 export class EditarProdutoComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private produtoService: ProdutosService) {}
+  constructor(private route: ActivatedRoute, private produtosService: ProdutosService) {}
 
 
 
