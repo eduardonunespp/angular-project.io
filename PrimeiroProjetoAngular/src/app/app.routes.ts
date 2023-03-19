@@ -7,6 +7,8 @@ import { ListaProdutoComponent } from "./produtos/lista-produto/lista-produto.co
 import { Component, NgModule } from "@angular/core";
 import { CadastroComponent } from "./demos/reactForms/cadastro/cadastro.component";
 import { NotFoundComponent } from "./navegacao/not-found/not-found.component";
+import { AuthGuard } from "./services/app.guard";
+import { FilmesComponent } from "./demos/pipes/filmes/filmes.component";
 
 export const rootRouterConfig: Routes = [
     
@@ -19,16 +21,23 @@ export const rootRouterConfig: Routes = [
     { path: 'produto-detalhe/:id', component: ListaProdutoComponent},
     { path: 'carrinho/:id', component: ListaProdutoComponent},
     { path: 'cadastro', component: CadastroComponent},
+    { path: 'filmes', component: FilmesComponent},
     {path: 'produtos', 
         loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
         .then(m => m.ProdutoModule)
+    },
+    {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin.module')
+        .then(m => m.AdminModule),
+        canLoad: [AuthGuard], canActivate: [AuthGuard]
     },
     { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(rootRouterConfig)
+        RouterModule.forRoot(rootRouterConfig, { enableTracing: true } )
     ],
     exports: [
         RouterModule

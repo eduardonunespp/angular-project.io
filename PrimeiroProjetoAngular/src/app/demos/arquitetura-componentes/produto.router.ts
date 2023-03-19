@@ -4,20 +4,27 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { EditarProdutoComponent } from "./editar-produto/editar-produto.component";
 import { ProdutoAppComponent } from "./produto.app.component";
+import { ProdutoResolve } from "./services/produto.resolve";
 
 const produtoRouterConfig: Routes = [
 
     {path: '', component: ProdutoAppComponent,
     children: [
-        {
-            path: '', component: ProdutoDashboardComponent
+        { path: '', redirectTo: 'todos', pathMatch: 'full' },
+        { 
+            path: ':estado',
+            component: ProdutoDashboardComponent,
+            resolve: {
+                produtos: ProdutoResolve
+            },
+            data: {
+                teste: 'informação'
+            }
         },
-        {
-            path: 'editar/:id', component: EditarProdutoComponent
-        },
+        { path: 'editar/:id', component: EditarProdutoComponent },
         
     ]
-    },
+    }
    
 
 ]

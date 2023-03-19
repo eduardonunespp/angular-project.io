@@ -57,7 +57,11 @@ export class ProdutosService {
 
   }
 
-  obterProdutos(): Produto[] {
+  obterProdutos(estado: string): Produto[] {
+    if(estado === 'ativos'){
+      return this.produtos.filter(produto => produto.ativo)
+    }
+
     return this.produtos
   }
 

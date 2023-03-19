@@ -3,6 +3,7 @@ import { Produto } from '../models/produto';
 import { Observable, fromEvent } from 'rxjs';
 import { ProdutoCountComponent } from '../components/produto-count.component';
 import { ProdutoCardDetalheComponent } from '../components/produto-card-detalhe.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produto-dashboard',
@@ -19,53 +20,11 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(ProdutoCardDetalheComponent) botoes: QueryList<ProdutoCardDetalheComponent>
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.produtos = [
-      {
-        id: 1,
-        nome: "teste 1",
-        ativo: true,
-        valor: 100,
-        imagem: "celular.jpg",
-      },
-      {
-        id: 2,
-        nome: "teste 2",
-        ativo: true,
-        valor: 200,
-        imagem: "gopro.jpg",
-      },
-      {
-        id: 3,
-        nome: "teste 3",
-        ativo: true,
-        valor: 400,
-        imagem: "mouse.jpg",
-      },
-      {
-        id: 4,
-        nome: "teste 4",
-        ativo: true,
-        valor: 100,
-        imagem: "celular.jpg",
-      },
-      {
-        id: 5,
-        nome: "teste 5",
-        ativo: true,
-        valor: 500,
-        imagem: "teclado.jpg",
-      },
-      {
-        id: 6,
-        nome: "teste 5",
-        ativo: false,
-        valor: 300,
-        imagem: "headset.jpg",
-      },
-    ];
+    this.produtos = this.route.snapshot.data['produtos']
+    console.log(this.route.snapshot.data['teste'])
   }
 
   ngAfterViewInit(): void {
