@@ -23,6 +23,9 @@ import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.co
 import { CadastroComponent } from './demos/reactForms/cadastro/cadastro.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produto-dashboard/produto-dashboard.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AuthGuard } from './services/app.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produ
     DataBindingComponent,
     ListaProdutoComponent,
     CadastroComponent,
+    FilmesComponent
   ],
   imports: [
     NavegacaoModule,
@@ -46,6 +50,8 @@ import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produ
   ],
   providers: [
     ProdutosService,
+    AuthGuard,
+    
   ],
   bootstrap: [AppComponent]
 })
