@@ -26,6 +26,7 @@ import { ProdutoDashboardComponent } from './demos/arquitetura-componentes/produ
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AuthGuard } from './services/app.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
+import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
     DataBindingComponent,
     ListaProdutoComponent,
     CadastroComponent,
-    FilmesComponent
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     NavegacaoModule,
