@@ -27,6 +27,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AuthGuard } from './services/app.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
+import { ImageFormartPipe } from './demos/pipes/filmes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
     ListaProdutoComponent,
     CadastroComponent,
     FilmesComponent,
-    FileSizePipe
+    FileSizePipe,
+    ImageFormartPipe
   ],
   imports: [
     NavegacaoModule,
