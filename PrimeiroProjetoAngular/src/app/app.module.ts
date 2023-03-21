@@ -1,4 +1,4 @@
-import { NgModule, asNativeElements } from '@angular/core';
+import { NgModule, Provider, asNativeElements } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'
 import { APP_BASE_HREF } from '@angular/common';
@@ -28,6 +28,13 @@ import { AuthGuard } from './services/app.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { ImageFormartPipe } from './demos/pipes/filmes/image.pipe';
+import { BarDiZonesComponent } from './demos/bar-di-zones/bar-di-zones.component';
+import { BarModule } from './demos/bar-di-zones/bar.module';
+import { BarServices } from './demos/bar-di-zones/bar.service';
+
+export const BAR_PROVIDERS: Provider = [
+  BarServices
+]
 
 @NgModule({
   declarations: [
@@ -39,7 +46,8 @@ import { ImageFormartPipe } from './demos/pipes/filmes/image.pipe';
     CadastroComponent,
     FilmesComponent,
     FileSizePipe,
-    ImageFormartPipe
+    ImageFormartPipe,
+    
   ],
   imports: [
     NavegacaoModule,
@@ -51,10 +59,15 @@ import { ImageFormartPipe } from './demos/pipes/filmes/image.pipe';
     TextMaskModule,
     CustomFormsModule,
     AppRouterConfig,
+    BarModule.forRoot({
+      unidadeId: 1000,
+      unidadeToken: ''
+    })
   ],
   providers: [
     ProdutosService,
     AuthGuard,
+    BAR_PROVIDERS
     
   ],
   bootstrap: [AppComponent]
