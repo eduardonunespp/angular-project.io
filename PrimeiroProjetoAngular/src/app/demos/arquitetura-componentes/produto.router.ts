@@ -17,8 +17,8 @@ const produtoRouterConfig: Routes = [
             resolve: {
                 produtos: ProdutoResolve
             },
-            data: {
-                teste: 'informação'
+            data: { 
+                test3e: 'informação'
             }
         },
         { path: 'editar/:id', component: EditarProdutoComponent },
