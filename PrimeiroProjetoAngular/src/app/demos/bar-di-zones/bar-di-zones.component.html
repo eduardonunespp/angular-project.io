@@ -22,3 +22,14 @@
 <div>
   Dados Unidade (service) 1: {{ dadosUnidade }}
 </div>
+
+<br><br><br><br>
+
+  <p>Progress: {{progress}}%</p>
+  <p *ngIf="progress >=100" > Done processing{{label}} of Angular zone! </p>
+
+  <a href="javascript:void(0)"  class="btn btn-success" (click)="processWithinAngularZone()">Procesar dentro da zona do Angular</a>
+  <a href="javascript:void(0)" class= "btn btn-danger" (click)="processOutsideOfAngularZone()"> Processar fora da zona do Angular  </a>
+
+
+

@@ -4,12 +4,13 @@ import { ContatoComponent } from "./institucional/contato/contato.component";
 import { SobreComponent } from "./institucional/sobre/sobre.component";
 import { DataBindingComponent } from "./demos/data-binding/data-binding.component";
 import { ListaProdutoComponent } from "./produtos/lista-produto/lista-produto.component";
-import { Component, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CadastroComponent } from "./demos/reactForms/cadastro/cadastro.component";
 import { NotFoundComponent } from "./navegacao/not-found/not-found.component";
 import { AuthGuard } from "./services/app.guard";
 import { FilmesComponent } from "./demos/pipes/filmes/filmes.component";
 import { BarDiZonesComponent } from "./demos/bar-di-zones/bar-di-zones.component";
+import { TodoListComponent } from "./demos/todo-list/todo-list.component";
 
 export const rootRouterConfig: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -22,7 +23,8 @@ export const rootRouterConfig: Routes = [
   { path: "carrinho/:id", component: ListaProdutoComponent },
   { path: "cadastro", component: CadastroComponent },
   { path: "filmes", component: FilmesComponent },
-  { path: "bar", component: BarDiZonesComponent},
+  { path: "bar", component: BarDiZonesComponent },
+  { path: "todo", component: TodoListComponent },
   {
     path: "produtos",
     loadChildren: () =>

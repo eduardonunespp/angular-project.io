@@ -31,6 +31,8 @@ import { ImageFormartPipe } from './demos/pipes/filmes/image.pipe';
 import { BarDiZonesComponent } from './demos/bar-di-zones/bar-di-zones.component';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
+import { TodoListComponent } from './demos/todo-list/todo-list.component';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 export const BAR_PROVIDERS: Provider = [
   BarServices
@@ -47,6 +49,7 @@ export const BAR_PROVIDERS: Provider = [
     FilmesComponent,
     FileSizePipe,
     ImageFormartPipe,
+    TodoListComponent,
     
   ],
   imports: [
@@ -62,7 +65,8 @@ export const BAR_PROVIDERS: Provider = [
     BarModule.forRoot({
       unidadeId: 1000,
       unidadeToken: ''
-    })
+    }),
+    TodoModule
   ],
   providers: [
     ProdutosService,
