@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from '../../todo.service';
+import { Observable } from 'rxjs';
+import { Task } from '../../task';
 
 @Component({
   selector: 'app-tasks',
@@ -6,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-  constructor() {}
+
+
+  todoList$: Observable<any[]>
+
+  constructor(private taskService: TasksService) {}
 
   ngOnInit(): void {
-      
+    this.todoList$ = this.taskService.getTodoList$      
   }
 }

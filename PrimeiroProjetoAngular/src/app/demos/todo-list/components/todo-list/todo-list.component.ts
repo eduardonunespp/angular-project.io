@@ -10,5 +10,5 @@ export class TodoListComponent {
 
 
   @Input()
-  list: Task[]
+  list: Task[] | any
 }
