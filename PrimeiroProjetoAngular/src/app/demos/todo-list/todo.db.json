@@ -4,19 +4,19 @@
       "id": 1,
       "nome": "Responder e-mails",
       "finalizado": false,
-      "iniciado": false
+      "iniciado": true
     },
     {
       "id": 2,
       "nome": "Reunião com fornecedor",
       "finalizado": false,
-      "iniciado": false
+      "iniciado": true
     },
     {
       "id": 3,
-      "nome": "Finalizar curso de Angular",
-      "finalizado": false,
-      "iniciado": false
+      "nome": "Finalizar curso de Angular!!!",
+      "finalizado": true,
+      "iniciado": true
     },
     {
       "id": 4,

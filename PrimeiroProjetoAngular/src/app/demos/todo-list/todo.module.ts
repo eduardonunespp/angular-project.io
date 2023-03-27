@@ -6,6 +6,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TasksIniciadasComponent } from './components/tasks-iniciadas/tasks-iniciadas.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TasksFinalizadasComponent } from './components/tasks-finalizadas/tasks-finalizadas.component';
+import { Store } from "./todo.store";
 
 
 
@@ -23,7 +24,8 @@ import { TasksFinalizadasComponent } from './components/tasks-finalizadas/tasks-
     HttpClientModule
   ],
   providers: [
-    TasksService
+    TasksService,
+    Store
   ],
   exports: [
     TodoListComponent,
